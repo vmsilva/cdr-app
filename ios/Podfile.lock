@@ -2032,6 +2032,7 @@ DEPENDENCIES:
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - lottie-react-native (from `../node_modules/lottie-react-native`)
+  - OneSignalXCFramework (< 6.0, >= 5.0.0)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCT-Folly/Fabric (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
@@ -2463,6 +2464,6 @@ SPEC CHECKSUMS:
   SwiftAudioEx: f6aa653770f3a0d3851edaf8d834a30aee4a7646
   Yoga: 1dd9dabb9df8fe08f12cd522eae04a2da0e252eb
 
-PODFILE CHECKSUM: 8e573d7cf50886059e6353f41c2f3182fc8dbad5
+PODFILE CHECKSUM: b6622c17338269d3b16a2dee21ff2ccbee568fc2
 
 COCOAPODS: 1.16.2

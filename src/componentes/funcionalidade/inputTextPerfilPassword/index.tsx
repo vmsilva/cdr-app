@@ -96,42 +96,29 @@ const inputTextPerfilPassword: React.RefForwardingComponent<
           borderBottomColor: CustomDefaultTheme.colors.cinzaEscuro,
           flexDirection: "row",
           justifyContent: 'space-between',
-          //backgroundColor: "#FF0",
           width: "100%",
         }}
       >
-        {/*  <View>
-          <CustomText
-            style={{
-              fontSize: 15,
-              color: "#434343",
-            }}
-          >
-            {label}
-          </CustomText>
-        </View> */}
         <View
           style={{
             width: "78%",
             height: 40,
             borderRadius: 50,
-            //backgroundColor: "#1a1a1a",
-            //borderBottomWidth: .3
           }}
         >
           <TextInput
-            theme={CustomDefaultTheme}
-            //theme={{ colors: { text: CustomDefaultTheme.colors.branco } }}
+            theme={{colors: {text: '#FFF'}}}
             secureTextEntry={hide}
-            selectionColor={CustomDefaultTheme.colors.text}
+            selectionColor={CustomDefaultTheme.colors.textInputEscuro}
             activeUnderlineColor="transparent"
             underlineColor="transparent"
             style={{
               height: 40,
               backgroundColor: "transparent",
               borderColor: 'transparent',
-              color: '#FFF'
+              //color: CustomDefaultTheme.colors.textInputEscuro
             }}
+            color={CustomDefaultTheme.colors.textInputEscuro}
             ref={inputElementRef}
             textContentType="password"
             keyboardAppearance="dark"

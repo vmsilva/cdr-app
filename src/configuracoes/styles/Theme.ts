@@ -16,11 +16,11 @@ export const CustomDefaultTheme = {
     backgroundTags:  "#00000078",
     borderColorTags: 'transparent',
 
-    backgroundIndiceCardVideo: '#B48A36',
+    backgroundIndiceCardVideo: '#021849',
     fontIndiceCardVideo: '#FFF',
 
     ///
-    buttonTabexplore: '#B48A36',
+    buttonTabexplore: '#021849',
 
     // sombra destaque
     corsombradestaque: '#000000',
@@ -38,8 +38,9 @@ export const CustomDefaultTheme = {
     headerBuscaTextColor: '#021849',
 
     // shadow perfil
-    shadowPerfil: '#252525',
-    shadowPerfil2: '#3B3B3B',
+    shadowPerfil: '#021849',
+    shadowPerfil2: '#021849',
+    shadowPerfil3: '#000',
 
     //Campo texto para enviar mensagem ao admin
     textMensagemBackground: '#FFF',
@@ -69,7 +70,7 @@ export const CustomDefaultTheme = {
     fontCardDownloadVideo: '#B48A36',
 
     //
-    CastIconColor: '#35BEAF',
+    CastIconColor: '#021849',
 
     //
     bottomTab: '#021849',
@@ -79,10 +80,10 @@ export const CustomDefaultTheme = {
     backgroundSliderContinuarAssistindo: '#ffffff80',
 
     // button destaques
-    ButtonDestaque: '#B48A36',
+    ButtonDestaque: '#021849',
 
     // icones dashboard
-    iconsHeaderScroll: '#b58845',
+    iconsHeaderScroll: '#021849',
 
     // material complementar
     backgroundMaterialComplementar: '#292929',
@@ -99,10 +100,10 @@ export const CustomDefaultTheme = {
     informacoesSinopse: '#292929',
 
      // input
-     backgroundInput: '#333333',
+     backgroundInput: '#FFF',
      backgroundInputBorder: '#494949',
  
-     primaryButton:  '#B48A36',
+     primaryButton:  '#021849',
  
      // linkedin button
      backgroundButtonLinkedin: '#0e66c2',
@@ -114,6 +115,14 @@ export const CustomDefaultTheme = {
 
      //texto componente video dashboard
      textScrollDashboard: '#021849',
+
+
+    // label text input
+    labelTextInput: '#FFF',
+
+    // texto input
+    textInputClaro: '#000',
+    textInputEscuro: '#FFF',
 
     backgroundBackButton: '#0000000b',
     facebookColor: '#2674f2',
@@ -127,9 +136,9 @@ export const CustomDefaultTheme = {
     bgprogramacao: '#333',
     bgsliderplayer: '#a21a1a',
     bgsliderContinuar: '#318EDE',
-    fontPrimaria: '#FFF00',
+    fontPrimaria: '#000',
     fontSecundaria: '#021849',
-    text: '#021849',
+    text: '#000',
     textFundoEscuro: '#FFF',
     textFundoClaro: '#021849',
     icons: '#FFF',
@@ -144,12 +153,12 @@ export const CustomDefaultTheme = {
     placeholder: '#101010',
     //placeholderText: '#ffffff70',
     placeholderText: '#737373',
-    TextInput: '#434343',
+    TextInput: '#FFF',
     backdrop: '#ffffffad',
     notification: 'red',
     card: '#000',
     border: '#1A648A',
-    labelInput: '#FFF',
+    labelInput: '#021849',
     backgroundInputMSG: '#d2d2d2',
     backgroundTransparent: '#00000099',
     textoOpaco: '#c2c3c4db',
@@ -183,7 +192,7 @@ export const CustomDefaultTheme = {
     cinza_botao: '#3a3a39',
     cinzaEscuro: '#4a4a53',
     fakerBG:'#b2b2b299',
-    buttonPrimary: '#B48A36',
+    buttonPrimary: '#021849',
     loading: '#FFF',
     tagBackground: '#A1A2A4',
     informacoesPlayerColor: '#191919',
@@ -191,7 +200,7 @@ export const CustomDefaultTheme = {
     backgroundCards: '#373938',
     backgroundCardEmpresa: '#D4D4D4',
     backgroundControlPlayer: '#0f0f0f61',
-    iconsPrimaryColor: '#021849',
+    iconsPrimaryColor: '#FFF',
     //iconsPrimaryColor: '#021849',
     fontAzul: '#0D1475',
     labelCor: '#36496C',

@@ -305,7 +305,7 @@ const Profile: React.FC<any> = (props) => {
       let parametros = {
         rota: "/certificados",
         parametros: {
-          token: '4c0450af-e4e0-4d7c-beda-8c38fa26e3e3'//user.token,
+          token: user.token,
         },
         showNotification: false,
         showLogError: true,
@@ -465,6 +465,7 @@ const Profile: React.FC<any> = (props) => {
                   colors={[
                     CustomDefaultTheme.colors.shadowPerfil,
                     CustomDefaultTheme.colors.shadowPerfil2,
+                    CustomDefaultTheme.colors.shadowPerfil3,
                   ]}
                   start={{ x: 0.268, y: 0.8 }} // Calculado para 59 graus
                   end={{ x: 1, y: 0.809 }} // Calculado para 59 graus

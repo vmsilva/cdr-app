@@ -3,10 +3,27 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTLinkingManager.h>
 
+// @generated begin react-native-google-cast-import - expo prebuild (DO NOT MODIFY) sync-da0acf16745f87cea5bffba9c0cc3a4f5e4387ea
+#if __has_include(<GoogleCast/GoogleCast.h>)
+#import <GoogleCast/GoogleCast.h>
+#endif
+// @generated end react-native-google-cast-import
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  // @generated begin react-native-google-cast-didFinishLaunchingWithOptions - expo prebuild (DO NOT MODIFY) sync-2ad935d6407dfa591d7171af9da1b03d7c763404
+  #if __has_include(<GoogleCast/GoogleCast.h>)
+    NSString *receiverAppID = kGCKDefaultMediaReceiverApplicationID;
+    GCKDiscoveryCriteria *criteria = [[GCKDiscoveryCriteria alloc] initWithApplicationID:receiverAppID];
+    GCKCastOptions* options = [[GCKCastOptions alloc] initWithDiscoveryCriteria:criteria];
+    options.startDiscoveryAfterFirstTapOnCastButton = true;
+    [GCKCastContext setSharedInstanceWithOptions:options];
+
+    [GCKCastContext sharedInstance].useDefaultExpandedMediaControls = true;
+  #endif
+  // @generated end react-native-google-cast-didFinishLaunchingWithOptions
   self.moduleName = @"main";
 
   // You can add your custom initial props in the dictionary below.

@@ -169,7 +169,7 @@ const InputTextPerfil: React.RefForwardingComponent<
           <CustomText
             style={{
               fontSize: 15,
-              color: '#434343'
+              color: CustomDefaultTheme.colors.labelTextInput
             }}
           >
             {label}
@@ -187,7 +187,7 @@ const InputTextPerfil: React.RefForwardingComponent<
           ref={inputElementRef}
           keyboardAppearance="dark"
           placeholderTextColor={CustomDefaultTheme.colors.TextInput}
-          color={CustomDefaultTheme.colors.fontPrimaria}
+          color={CustomDefaultTheme.colors.textInputEscuro}
           value={formattedValue} // Usa o valor formatado
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
