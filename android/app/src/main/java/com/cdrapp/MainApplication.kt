@@ -1,4 +1,4 @@
-package com.cdrapp
+package br.com.zoeweb.cdr
 
 import android.app.Application
 import android.content.res.Configuration

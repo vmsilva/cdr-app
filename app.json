@@ -2,6 +2,11 @@
   "expo": {
     "name": "cdr-app",
     "slug": "cdr-app",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "e9c4bf28-a52b-465e-9eb5-befae1e3a5ec"
+      }
+    }
   }
 }

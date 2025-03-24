@@ -1,4 +1,4 @@
-package com.cdrapp
+package br.com.zoeweb.cdr
 
 import android.os.Build
 import android.os.Bundle
