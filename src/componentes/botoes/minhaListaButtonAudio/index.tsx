@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { TouchableOpacity, View } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 //Config
 import { postData, getData } from "../../../configuracoes/services/request";
@@ -129,11 +129,10 @@ const MinhaListaButtonAudio: React.FC<any> = ({
           style={[meusAudios[cod_playlist_audio] == undefined
             ? {} : styles.containerIcons, background != undefined && {backgroundColor: background}]}
         >
-          <AntDesign
+          <Ionicons
             name={
               meusAudios[cod_playlist_audio] == undefined
-                ? "plus"
-                : "check"
+              ? "bookmark" : "bookmark-outline"
             }
             size={22}
             color={

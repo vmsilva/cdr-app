@@ -133,7 +133,7 @@ const CustomBottomSheet: React.FC<PageHeaderProps | any> = ({
           <Button
             onPress={() => sheetRef.current?.collapse()}
           >
-            <CustomText>Fechar</CustomText>
+            <CustomText textType="montserratLight" style={{color: CustomDefaultTheme.colors.branco}}>Fechar</CustomText>
           </Button>
           {children}
         </View>

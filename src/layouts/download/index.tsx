@@ -747,7 +747,7 @@ const DownlaodPage: React.FC<any> = (props) => {
                     style={{
                       flexDirection: "row",
                       justifyContent: "space-between",
-                      width: "80%",
+                      width: "100%",
                     }}
                   >
                     <TouchableOpacity
@@ -758,11 +758,12 @@ const DownlaodPage: React.FC<any> = (props) => {
                       }}
                       style={{
                         flexDirection: "row",
+                        width: '100%'
                       }}
                     >
                       <Image
                         style={{
-                          marginLeft: 20,
+                          marginLeft: 5,
                           width: 100,
                           height: 60,
                           backgroundColor: "#FFF",
@@ -774,8 +775,7 @@ const DownlaodPage: React.FC<any> = (props) => {
                       />
                       <View
                         style={{
-                          width: "71%",
-                          //backgroundColor: '#FF0'
+                          width: "63%",
                         }}
                       >
                         <CustomText
@@ -837,8 +837,8 @@ const DownlaodPage: React.FC<any> = (props) => {
                           style={[StylesDOWNLOAD.containerIcons]}
                         >
                           <MaterialCommunityIcons
-                            name="checkbox-marked-circle-outline"
-                            size={17}
+                            name="check"
+                            size={22}
                             color={CustomDefaultTheme.colors.branco}
                           />
                         </View>
@@ -872,7 +872,7 @@ const DownlaodPage: React.FC<any> = (props) => {
 
               let OBJETOCAMINHOLOCAL = localDownloasAudiosInfo[uuid_audio];
               OBJETOCAMINHOLOCAL.url = `file://${item.path}`;
-              OBJETOCAMINHOLOCAL.artwork = `${DocumentDirectoryPath}/media/thumb_audios/${uuid_audio}.jpg`
+              OBJETOCAMINHOLOCAL.artwork = `file://${DocumentDirectoryPath}/media/thumb_audios/${uuid_audio}.jpg`
 
               //array.push(localDownloasAudiosInfo[uuid_audio]);
               array.push(OBJETOCAMINHOLOCAL);
@@ -923,7 +923,7 @@ const DownlaodPage: React.FC<any> = (props) => {
                         textType="montserratMedium"
                         style={{
                           fontSize: 11,
-                          color: CustomDefaultTheme.colors.primaryButton,
+                          color: CustomDefaultTheme.colors.fontCardDownloadVideo,
                         }}
                       >
                         {localDownloasAudiosInfo[uuid_audio].title}
@@ -933,7 +933,7 @@ const DownlaodPage: React.FC<any> = (props) => {
                         style={{
                           top: 2,
                           fontSize: 14,
-                          color: "#FFF",
+                          color: CustomDefaultTheme.colors.text,
                           letterSpacing: 0.21,
                         }}
                         numberOfLines={1}

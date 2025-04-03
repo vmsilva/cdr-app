@@ -108,12 +108,12 @@ const SinopseAudio: React.FC<any> = (props) => {
     );
   };
 
-  const addTrackCard = async (params: any = null, posicao: any = null) => {
+  const addTrackCard = async (params: any = null, posicao: any = null) => { 
     try {
       let OBJETOPARAMS = await convertObjetoZoeParaPlaylistReactTrackPlayer(
         audios
       );
-
+      //console.log(OBJETOPARAMS); return;
       await removerQueues();
       await addTracks(OBJETOPARAMS, posicao);
 
@@ -251,7 +251,7 @@ const SinopseAudio: React.FC<any> = (props) => {
             style={{
               flexDirection: "row",
               borderBottomWidth: 3,
-              borderBottomColor: CustomDefaultTheme.colors.text,
+              borderBottomColor: CustomDefaultTheme.colors.buttonPrimary,
               maxWidth: 140,
             }}
           >
@@ -261,7 +261,7 @@ const SinopseAudio: React.FC<any> = (props) => {
               style={{
                 top: 10,
                 fontSize: 14,
-                color: CustomDefaultTheme.colors.text,
+                color: CustomDefaultTheme.colors.buttonPrimary,
                 letterSpacing: 0.21,
                 lineHeight: 18,
               }}

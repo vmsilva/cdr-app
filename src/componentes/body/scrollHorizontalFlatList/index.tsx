@@ -186,12 +186,14 @@ const ScrollHorizontalFlatList: React.FC<CapaHorizontalProps | any> = ({
                   position: "absolute",
                   bottom: 5,
                   left: 5,
+                  backgroundColor: 'green',
+                  borderRadius: 99
                 }}
               >
                 <MaterialCommunityIcons
-                  name="checkbox-marked-circle"
+                  name="check"
                   size={24}
-                  color="green"
+                  color="#FFF"
                 />
               </View>
             )}

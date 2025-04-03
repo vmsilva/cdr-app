@@ -14,32 +14,32 @@ export const CustomDefaultTheme = {
   colors: {
     // tags
     backgroundTags:  "#00000078",
-    borderColorTags: 'transparent',
+    borderColorTags: '#59C266',
 
-    backgroundIndiceCardVideo: '#021849',
+    backgroundIndiceCardVideo: '#2435d3',
     fontIndiceCardVideo: '#FFF',
 
     ///
-    buttonTabexplore: '#021849',
+    buttonTabexplore: '#2435d3',
 
     // sombra destaque
     corsombradestaque: '#000000',
 
     //carde serie
-    buttonCardSerie: '#B48A36',
+    buttonCardSerie: '#59C266',
 
     //
-    descricao_palestrante: '#021849',
+    descricao_palestrante: '#2435d3',
 
     // 
-    fontPlayerPage: '#B48A36',
+    fontPlayerPage: '#59C266',
 
     // cor texto
-    headerBuscaTextColor: '#021849',
+    headerBuscaTextColor: '#2435d3',
 
     // shadow perfil
-    shadowPerfil: '#021849',
-    shadowPerfil2: '#021849',
+    shadowPerfil: '#2435d3',
+    shadowPerfil2: '#2435d3',
     shadowPerfil3: '#000',
 
     //Campo texto para enviar mensagem ao admin
@@ -51,7 +51,7 @@ export const CustomDefaultTheme = {
     senderBalao: '#FFF',
 
     // cores de fonte padrão no componente que expand os controles do player e exibe as informaoes
-    textBottomsheetPlayerAudio: '#FFF',
+    textBottomsheetPlayerAudio: '#000',
 
     // botão leia mais
     leiamaisbuttoncolor: '#275074',
@@ -64,37 +64,37 @@ export const CustomDefaultTheme = {
     borderInformacoesLivro:'#707070',
 
     //background icones button
-    backgroundIconsButton: '#B48A36', 
+    backgroundIconsButton: '#59C266', 
 
     //
-    fontCardDownloadVideo: '#B48A36',
+    fontCardDownloadVideo: '#59C266',
 
     //
-    CastIconColor: '#021849',
+    CastIconColor: '#2435d3',
 
     //
-    bottomTab: '#021849',
+    bottomTab: '#2435d3',
 
     // Continuar assistindo
-    continuarAssistindoBackground: "#B48A36",
+    continuarAssistindoBackground: "#59C266",
     backgroundSliderContinuarAssistindo: '#ffffff80',
 
     // button destaques
-    ButtonDestaque: '#021849',
+    ButtonDestaque: '#2435d3',
 
     // icones dashboard
-    iconsHeaderScroll: '#021849',
+    iconsHeaderScroll: '#2435d3',
 
     // material complementar
     backgroundMaterialComplementar: '#292929',
 
     //perfil categoria
-    tituloCategoria: '#B48A36',
+    tituloCategoria: '#59C266',
 
     //input busca
     backgroundInputBusca: '#FFF',
-    iconeSearchBar: '#021849',
-    activityLoading: '#021849',
+    iconeSearchBar: '#2435d3',
+    activityLoading: '#2435d3',
 
      // sinopse
     informacoesSinopse: '#292929',
@@ -103,7 +103,7 @@ export const CustomDefaultTheme = {
      backgroundInput: '#FFF',
      backgroundInputBorder: '#494949',
  
-     primaryButton:  '#021849',
+     primaryButton:  '#2435d3',
  
      // linkedin button
      backgroundButtonLinkedin: '#0e66c2',
@@ -114,7 +114,7 @@ export const CustomDefaultTheme = {
      gradiente3: '#f1f1f1',
 
      //texto componente video dashboard
-     textScrollDashboard: '#021849',
+     textScrollDashboard: '#2435d3',
 
 
     // label text input
@@ -124,10 +124,20 @@ export const CustomDefaultTheme = {
     textInputClaro: '#000',
     textInputEscuro: '#FFF',
 
+    //
+    sliderTrackplayer: '#59C266',
+
+    // loading video
+    progressoSlider: '#FFF', //aquiii era amarelo
+
+    loading: '#59C266', 
+
+    // slider player
+    sliderColor: '#FFF',
+
     backgroundBackButton: '#0000000b',
     facebookColor: '#2674f2',
     appleColor: '#000',
-    sliderTrackplayer: '#03192B',
     header: 'transparent',
     theme: '#B9161F',
     primary: '#FFF',//'#5DA57D',
@@ -137,10 +147,10 @@ export const CustomDefaultTheme = {
     bgsliderplayer: '#a21a1a',
     bgsliderContinuar: '#318EDE',
     fontPrimaria: '#000',
-    fontSecundaria: '#021849',
-    text: '#000',
+    fontSecundaria: '#2435d3',
+    text: '#0E0E0E',
     textFundoEscuro: '#FFF',
-    textFundoClaro: '#021849',
+    textFundoClaro: '#2435d3',
     icons: '#FFF',
     iconsBackgroundEscuro: '#FFF',
     background: '#f1f1f1',
@@ -158,7 +168,7 @@ export const CustomDefaultTheme = {
     notification: 'red',
     card: '#000',
     border: '#1A648A',
-    labelInput: '#021849',
+    labelInput: '#2435d3',
     backgroundInputMSG: '#d2d2d2',
     backgroundTransparent: '#00000099',
     textoOpaco: '#c2c3c4db',
@@ -179,7 +189,6 @@ export const CustomDefaultTheme = {
     preto: '#000',
     vermelho: '#C72928',
     cinza: '#dfdfdf',
-    sliderColor: '#05BEAF',
     cinzaSecundario:'#B2B2B2',
     vermelhoLayout: '#E30A17',
     borda:'#1A648A',
@@ -192,16 +201,15 @@ export const CustomDefaultTheme = {
     cinza_botao: '#3a3a39',
     cinzaEscuro: '#4a4a53',
     fakerBG:'#b2b2b299',
-    buttonPrimary: '#021849',
-    loading: '#FFF',
+    buttonPrimary: '#2435d3',
     tagBackground: '#A1A2A4',
     informacoesPlayerColor: '#191919',
     fundoAnimacao: '#029f40',
     backgroundCards: '#373938',
     backgroundCardEmpresa: '#D4D4D4',
     backgroundControlPlayer: '#0f0f0f61',
-    iconsPrimaryColor: '#FFF',
-    //iconsPrimaryColor: '#021849',
+    iconsPrimaryColor: '#2435d3',
+    //iconsPrimaryColor: '#2435d3',
     fontAzul: '#0D1475',
     labelCor: '#36496C',
     accordion: '#acbec0',
@@ -228,7 +236,6 @@ export const CustomDefaultTheme = {
     cinzaGov: '#9daaae',
     lottieColor: '#000',
     backgroundSlider: '#4F4F58',
-    progressoSlider: '#DB354F', //aquiii era amarelo
     visto: '#00D735',
     bordaVisto: '#46BB7B',
     backgroundBoletim: '#6c8d92',
@@ -249,7 +256,7 @@ export const CustomDarkTheme = {
     ...NavigationDarkTheme.colors,
     //...PaperDarkTheme.colors,
     placeholder: 'white', 
-    text: '#021849', 
+    text: '#2435d3', 
     primary: 'white',
     underlineColor: 'transparent', 
     background: '#1F1F1F'

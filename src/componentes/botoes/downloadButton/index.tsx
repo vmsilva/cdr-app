@@ -300,8 +300,8 @@ const DownloadButton: React.FC<any> = ({ hls, item, color }) => {
             style={[styles.containerIcons]}
           >
             <MaterialCommunityIcons
-              name="checkbox-marked-circle-outline"
-              size={17}
+              name="check"
+              size={22}
               color={CustomDefaultTheme.colors.branco}
             />
           </View>

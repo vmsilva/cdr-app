@@ -16,6 +16,7 @@ import {
   useWindowDimensions,
   FlatList,
   ScrollView,
+  BackHandler,
 } from "react-native";
 import Animated, {
   useAnimatedScrollHandler,
@@ -1402,6 +1403,26 @@ const PlayerPage: React.FC<any> = (props) => {
     }
     return () => {};
   }, [isFocused, item]);
+
+ 
+  // backbutton android 
+  useEffect(() => {
+    const backAction = () => {
+      if (navigation.canGoBack()) { 
+        handleUrl()
+        //navigation.goBack();
+        return true; // Impede o fechamento do app
+      }
+      return false; // Permite o fechamento do app se não houver navegação
+    };
+  
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction
+    );
+  
+    return () => backHandler.remove();
+  }, [navigation]);
 
   // virando player automatico se orientacao desbloqueada
   return (

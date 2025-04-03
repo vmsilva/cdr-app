@@ -279,7 +279,7 @@ const DownloadButtonAudio: React.FC<any> = ({ hls, item, color, background }) =>
         }}
       >
         <MaterialCommunityIcons
-          name="checkbox-marked-circle-outline"
+          name="check"
           size={22}
           color={"#FFF"}
         />

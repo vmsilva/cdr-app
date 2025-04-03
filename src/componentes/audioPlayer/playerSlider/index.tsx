@@ -161,7 +161,7 @@ const PlayerSlider: React.FC<PageHeaderProps | any> = ({ tab }) => {
     }
   };
 
-  const trackProxima = async () => {
+  const trackProxima = async () => {//console.log()
     try {
       await TrackPlayer.skipToNext();
     } catch (error) {
@@ -806,7 +806,7 @@ const PlayerSlider: React.FC<PageHeaderProps | any> = ({ tab }) => {
                     playerState2 == "ready" ? (
                       <ActivityIndicator
                         size={65}
-                        color={CustomDefaultTheme.colors.primary}
+                        color={CustomDefaultTheme.colors.buttonCardSerie}
                       />
                     ) : (
                       <TouchableOpacity
@@ -1033,12 +1033,12 @@ const PlayerSlider: React.FC<PageHeaderProps | any> = ({ tab }) => {
                       <MinhaListaButtonAudio
                         cod_playlist_audio={trackAtual.cod_playlist_audio}
                         color={"#FFF"}
-                        background={"#1b305c"}
+                        background={CustomDefaultTheme.colors.buttonCardSerie}
                       />
                       <View style={{ width: 10 }} />
                       <TouchableOpacity style={[styles.containerIcons]}>
                         <DownloadButtonAudio
-                          background={"#1b305c"}
+                          background={CustomDefaultTheme.colors.buttonCardSerie}
                           color={CustomDefaultTheme.colors.buttonPrimary}
                           hls={trackAtual.url}
                           item={trackAtual}

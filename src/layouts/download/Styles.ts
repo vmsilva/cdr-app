@@ -10,9 +10,9 @@ const Styles = StyleSheet.create({
     height: "100%",
   },
   itemVideo: {
-    paddingRight: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
+    //paddingRight: 20,
+    paddingVertical: 10,
+    //paddingBottom: 10,
     //borderBottomWidth: 0.2,
     borderBottomColor: "#FFF",
     flexDirection: "row",

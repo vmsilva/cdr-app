@@ -381,7 +381,7 @@ const PlayerV3: React.FC<VideoPropsComponent | any> = ({
         <View style={[Styles.loadViewFilho]}>
           <ActivityIndicator
             animating={true}
-            color={CustomDefaultTheme.colors.progressoSlider}
+            color={CustomDefaultTheme.colors.loading}
             size={40}
           />
         </View>
