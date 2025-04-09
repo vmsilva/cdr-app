@@ -40,47 +40,9 @@ const CardTemporada: React.FC<any> = ({ item, categoria }) => {
       console.log(error, "buscar categoria");
     }
   };
-
-  const montaJSONOBJETOSOLD = async (item) => {
-    
-    try {
-      let ITEMCAT = item;
-
-      let RESPOSTATEMPORADASSINGLE = await buscaCategoria(
-        ITEMCAT.categorias[0].cod_categoria
-      );
-
-      ITEMCAT.categorias[0]["apresentacao_apresentador"] =
-        item.palestrante.descricao_palestrante;
-      ITEMCAT.categorias[0]["nome_apresentador"] =
-        item.palestrante.nome_palestrante;
-      ITEMCAT.categorias[0]["subtitulo_apresentador"] =
-        item.palestrante.subnome_palestrante;
-      ITEMCAT.categorias[0]["url_foto_apresentador"] =
-        item.palestrante.url_foto_palestrante;
-
-      let CATEGORIASINGLE = {
-        categoria: {
-          categoria: ITEMCAT.categorias[0],
-          temporadas: RESPOSTATEMPORADASSINGLE.temporadas,
-          videos: {},
-        },
-        cod_categoria_temporada:
-          RESPOSTATEMPORADASSINGLE.temporadas[0].cod_categoria_temporada,
-        item: ITEMCAT.categorias[0],
-        palestrante: item.palestrante,
-        pagina_origem: "FiltroTemporadaDrawer",
-        relacionados: [],
-      };
-      //console.log(CATEGORIASINGLE.categoria.temporadas); return
-      navigation.navigate("SinopseSerieDrawer", CATEGORIASINGLE);
-    } catch (error) {
-      console.log(error, "montajson error");
-    }
-  };
   
   const montaJSONOBJETOS = async (item_montajson) => {
-    //console.log(item); return;
+    //console.log(item.cod_categoria); return;
     try {
       let ITEMCAT = item_montajson;
 
@@ -96,6 +58,8 @@ const CardTemporada: React.FC<any> = ({ item, categoria }) => {
         item.palestrantes_temporada[0].subnome_palestrante;
       ITEMCAT.categorias[0]["url_foto_apresentador"] =
         item.palestrantes_temporada[0].url_foto_palestrante;
+      /*ITEMCAT.categorias[0]["url_foto_categoria"] =
+        categoria.categoria.url_foto_categoria; */
 
       let CATEGORIASINGLE = {
         categoria: {
@@ -124,11 +88,7 @@ const CardTemporada: React.FC<any> = ({ item, categoria }) => {
   };
 
   const handleBuscar = async () => {
-    //console.log(item);  return;
     try {
-      //console.log(item); return; //apresentadores_temporada
-
-      //console.log(item, "-->> cod_palestrante");return
 
       setIsLoading(true);
       let parametros = {
@@ -138,7 +98,7 @@ const CardTemporada: React.FC<any> = ({ item, categoria }) => {
         showLogError: true,
       };
 
-      //console.log(parametros, item, '--->> testeeeee booooora');
+      console.log(parametros, item, '--->> testeeeee booooora');
       const response = (await getData(parametros)) as any;
 
       await montaJSONOBJETOS(response.data.data);

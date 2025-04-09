@@ -146,8 +146,8 @@ const FiltroTemporada: React.FC<any> = (props) => {
 
     return(<>
       <FlatList
-        data={categoria.temporadas}
-        renderItem={(item, index) => {
+        data={categoria.temporadas as any}
+        renderItem={(item) => {
           //console.log(item.item, '--->> itemmmmm')
           return <CardTemporada item={item.item} categoria={categoria}/>
         }} />
@@ -292,6 +292,12 @@ const FiltroTemporada: React.FC<any> = (props) => {
   if (!isFocused) {
     return <></>;
   }
+
+  console.log( categoria == undefined
+    ? ""
+    : categoria.categoria != undefined
+    ? categoria.categoria.url_foto_categoria
+    : "", 'victor filtro temporada')
 
   return (
     <>

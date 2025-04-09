@@ -105,7 +105,7 @@ const SinopseSerie: React.FC<any> = (props) => {
         showLogError: true,
       };
 
-      //console.log(parametros, "sinopse serieeee");
+      console.log(parametros, "sinopse serieeee");
       const response = (await getData(parametros)) as any;
 
       setCategoria(response.data.data);
@@ -433,6 +433,8 @@ const SinopseSerie: React.FC<any> = (props) => {
   if (!isFocused) {
     return <></>;
   }
+
+  //console.log(categoria?.categoria?.url_foto_categoria, 'victor')
 
   return (
     <>
