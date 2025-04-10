@@ -16,16 +16,39 @@ import CustomText from "../../componentes/customText";
 
 interface CapaVerticalProps {
   array: any[];
+  base: any;
   tipo: string; // audio ou video
 }
 
 const ScrollVerticalFlatList: React.FC<CapaVerticalProps> = ({
   array,
+  base,
   tipo,
 }) => {
   const navigation = useNavigation() as any;
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { user } = useAuth();
+
+  const parametrostratados = (item: any) => {
+    switch (base.forma_exibicao_padrao) {
+      case "categorias":
+        return {
+          rota: `palestrantes/get/${item.cod_palestrante}`,
+          parametros: `token_usuario=${user.token}`,
+          showNotification: false,
+          showLogError: true,
+        };
+        break;
+      default:
+        return {
+          rota: `palestrantes/get/${item.cod_palestrante}`,
+          parametros: `token_usuario=${user.token}`,
+          showNotification: false,
+          showLogError: true,
+        };
+        break;
+    }
+  };
 
   const buscaCategoria = async (cod_categoria: any) => {
     //console.log(cod_categoria); return;
@@ -55,14 +78,12 @@ const ScrollVerticalFlatList: React.FC<CapaVerticalProps> = ({
   const montaJSONOBJETOS = async (item) => {
     try {
       let ITEMCAT = item;
-      //alert('palestrante curssoooo')
       if (item.categorias.length > 1) {
         navigation.navigate("FiltroPalestranteCursosDrawer", {
           item: item.palestrante,
           categorias: item.categorias,
         });
       } else {
-        //alert('palestrante curssoooo')
         let RESPOSTATEMPORADASSINGLE = await buscaCategoria(
           ITEMCAT.categorias[0].cod_categoria
         );
@@ -99,22 +120,20 @@ const ScrollVerticalFlatList: React.FC<CapaVerticalProps> = ({
     }
   };
 
+  const handleURL = async () => {
+    try {
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleBuscar = async (item) => {
     try {
       setIsLoading(true);
-      let parametros = {
-        rota: `palestrantes/get/${item.cod_palestrante}`,
-        parametros: `token_usuario=${user.token}`,
-        showNotification: false,
-        showLogError: true,
-      };
+
+      let parametros = parametrostratados(item);
+
       const response = (await getData(parametros)) as any;
-      console.log(
-        "------------",
-        response.data.data,
-        user.token,
-        "-------------"
-      );
 
       await montaJSONOBJETOS(response.data.data);
 
@@ -125,25 +144,135 @@ const ScrollVerticalFlatList: React.FC<CapaVerticalProps> = ({
     }
   };
 
-  const handleOpenUrl = (item: any) => {
+  const montaJSONOBJETOSCURSO = async (item_montajson) => {
+    //console.log(item.cod_categoria); return;
+    try {
+      let ITEMCAT = item_montajson;
+
+      let RESPOSTATEMPORADASSINGLE = await buscaCategoria(
+        item.cod_categoria//ITEMCAT.categorias[0].cod_categoria
+      );
+
+      ITEMCAT.categorias[0]["apresentacao_apresentador"] =
+        item.palestrantes_temporada[0].descricao_palestrante;
+      ITEMCAT.categorias[0]["nome_apresentador"] =
+        item.palestrantes_temporada[0].nome_palestrante;
+      ITEMCAT.categorias[0]["subtitulo_apresentador"] =
+        item.palestrantes_temporada[0].subnome_palestrante;
+      ITEMCAT.categorias[0]["url_foto_apresentador"] =
+        item.palestrantes_temporada[0].url_foto_palestrante;
+      /*ITEMCAT.categorias[0]["url_foto_categoria"] =
+        categoria.categoria.url_foto_categoria; */
+
+      let CATEGORIASINGLE = {
+        categoria: {
+          palestrante_temporada: {
+            apresentacao_apresentador: item.palestrantes_temporada[0].descricao_palestrante,
+            nome_apresentador: item.palestrantes_temporada[0].nome_palestrante,
+            subtitulo_apresentador: item.palestrantes_temporada[0].subnome_palestrante,
+            url_foto_apresentador: item.palestrantes_temporada[0].url_foto_palestrante,
+          },
+          categoria: ITEMCAT.categorias[0],
+          temporadas: RESPOSTATEMPORADASSINGLE.temporadas,
+          videos: {},
+        },
+        cod_categoria_temporada:
+          RESPOSTATEMPORADASSINGLE.temporadas[0].cod_categoria_temporada,
+        item: ITEMCAT.categorias[0],
+        palestrante: item.palestrantes_temporada[0],
+        pagina_origem: "FiltroTemporadaDrawer",
+        relacionados: [],
+      };
+      //console.log(CATEGORIASINGLE.categoria.temporadas); return
+      navigation.navigate("SinopseSerieDrawer", CATEGORIASINGLE);
+    } catch (error) {
+      console.log(error, "montajson error");
+    }
+  };
+
+  const handleOpenUrl = async (item: any) => {
     //console.log(item.cod_categoria, '----> categoria', item); return;
 
-    switch (tipo) {
-      case "programas":
-        navigation.navigate("FiltroTemporadaDrawer", {
-          //SinopseSerieDrawer
-          item: item,
-          relacionados: [],
-          categoria: item,
-        });
-        break;
-      case "palestrantes":
-        console.log(item.cod_palestrante, "-->> cod palestrante");
-        handleBuscar(item);
-        break;
-      default:
-        navigation.navigate("SinopseLivroDrawer", { item: item });
-        break;
+    try {
+      switch (tipo) {
+        case "programas":
+          if (base.forma_exibicao_padrao == "categorias") {
+            let retorno = (await buscaCategoria(item.cod_categoria)) as any;
+            //console.log(retorno.temporadas[0]); return;
+            let CATEGORIASINGLE = {
+              categoria: {
+                palestrante_temporada: {
+                    apresentacao_apresentador: retorno.temporadas[0].palestrantes_temporada[0].descricao_palestrante,
+                    nome_apresentador: retorno.temporadas[0].palestrantes_temporada[0].nome_palestrante,
+                    subtitulo_apresentador: retorno.temporadas[0].palestrantes_temporada[0].subnome_palestrante,
+                    url_foto_apresentador: retorno.temporadas[0].palestrantes_temporada[0].url_foto_palestrante,
+                  },
+                categoria: retorno.categoria,
+                temporadas: retorno.temporadas,
+                videos: {},
+              },
+              cod_categoria: retorno.categoria.cod_categoria,
+              //cod_categoria_temporada: retorno.temporadas[0][0].cod_categoria_temporada,
+              item: retorno.categoria,
+              palestrante: retorno.temporadas[0].palestrantes_temporada[0],
+              pagina_origem: undefined,
+              relacionados: [],
+            };
+
+            //console.log(retorno.temporadas[0].palestrantes_temporada[0]);return;
+            navigation.navigate("SinopseSerieCursoDrawer", CATEGORIASINGLE);
+
+            return;
+
+            let CATEGORIASINGLEOLD = {
+              categoria: {
+                palestrante_temporada: {
+                  apresentacao_apresentador:
+                    item.palestrantes_temporada[0].descricao_palestrante,
+                  nome_apresentador:
+                    item.palestrantes_temporada[0].nome_palestrante,
+                  subtitulo_apresentador:
+                    item.palestrantes_temporada[0].subnome_palestrante,
+                  url_foto_apresentador:
+                    item.palestrantes_temporada[0].url_foto_palestrante,
+                },
+                categoria: retorno.categoria,
+                temporadas: retorno.temporadas,
+                videos: {},
+              },
+              cod_categoria_temporada:
+                retorno.temporadas[0].cod_categoria_temporada,
+              item: retorno.categoria,
+              palestrante: item.palestrantes_temporada[0],
+              pagina_origem: undefined,
+              relacionados: [],
+            };
+
+            return;
+            //console.log(CATEGORIASINGLE.categoria.temporadas); return
+            //navigation.navigate("SinopseSerieDrawer", CATEGORIASINGLE);
+
+            console.log(retorno);
+          } else {
+            navigation.navigate("FiltroTemporadaDrawer", {
+              //SinopseSerieDrawer
+              item: item,
+              relacionados: [],
+              categoria: item,
+            });
+          }
+
+          break;
+        case "palestrantes":
+          console.log(item.cod_palestrante, "-->> cod palestrante");
+          handleBuscar(item);
+          break;
+        default:
+          navigation.navigate("SinopseLivroDrawer", { item: item });
+          break;
+      }
+    } catch (error) {
+      console.log(error, "handleOpenUrl");
     }
   };
 
@@ -177,7 +306,8 @@ const ScrollVerticalFlatList: React.FC<CapaVerticalProps> = ({
           />
         );
         break;
-      case "palestrantes": console.log(props.item)
+      case "palestrantes":
+        console.log(props.item);
         return (
           <FastImage
             source={{
@@ -202,17 +332,21 @@ const ScrollVerticalFlatList: React.FC<CapaVerticalProps> = ({
                     height: "100%",
                     width: "100%",
                     borderRadius: 10,
-                    alignItems: 'center',
-                    justifyContent: 'flex-end',
-                    padding: 15
+                    alignItems: "center",
+                    justifyContent: "flex-end",
+                    padding: 15,
                   }}
                 >
-
-                  <CustomText textType="montserratBold" style={{
-                    fontSize: 12,
-                    textAlign: 'center'
+                  <CustomText
+                    textType="montserratBold"
+                    style={{
+                      fontSize: 12,
+                      textAlign: "center",
                       //bottom: 25, position: 'absolute'
-                      }}>{props.item.nome_palestrante}</CustomText>
+                    }}
+                  >
+                    {props.item.nome_palestrante}
+                  </CustomText>
                 </LinearGradient>
               </>
             }

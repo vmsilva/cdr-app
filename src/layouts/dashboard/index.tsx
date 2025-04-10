@@ -58,6 +58,7 @@ const Dashboard: React.FC<any> = (props) => {
     destaques,
     categorias,
     palestrantes,
+    base
   } = useContext(UtilContext);
 
   const scrollY = useSharedValue(0); // Variável compartilhada para rastrear a posição de rolagem
@@ -245,6 +246,7 @@ const Dashboard: React.FC<any> = (props) => {
         <View style={[SCROLLSTYLEESPACAMENTODASHBOARD]}>
           <HeaderScroll icon={"tv"} label={"Cursos e Eventos"} show={true} />
           <ScrollVerticalFlatList
+            base={base}
             array={Object.values(categorias)}
             tipo="programas"
           />
@@ -405,6 +407,7 @@ const Dashboard: React.FC<any> = (props) => {
       setTimeout(() => {
         buscaContinuarAssistindo();
       }, 100);
+      console.log(base, 'basee');
     }
     return () => {};
   }, [isFocused]);

@@ -24,6 +24,7 @@ import Sinopse from "../../../layouts/sinopse";
 import WebSeeAppInterno from "../../../layouts/WebSeeAppInterno";
 import VejaMais from "../../../layouts/vejaMais";
 import SinopseSerie from "../../../layouts/sinopseSerie";
+import SinopseSerieCurso from "../../../layouts/sinopseSerie/sinopseSerieCurso";
 import Configruacoes from "../../../layouts/configuracoes";
 import AoVivoPage from "../../../layouts/aoVivo";
 import BookReader from "../../../layouts/bookReader";
@@ -321,6 +322,36 @@ const DrawerNavigatorRoutes = ({ navigation }) => {
         <DrawerNavigator.Screen
           name="SinopseSerieDrawer"
           component={SinopseSerie}
+          options={({ navigation }) => ({
+            headerShown: false,
+            drawerLabel: () => <Text>Sinopse</Text>,
+            drawerIcon: ({ color, size }) => (
+              <Feather
+                name="globe"
+                size={24}
+                color={CustomDefaultTheme.colors.iconsPrimaryColor}
+              />
+            ),
+            drawerItemStyle: {
+              borderBottomColor: "#FFF",
+              borderBottomWidth: 0.4,
+              width: 220,
+              display: "none",
+            },
+          })}
+          listeners={({ navigation, route }) => ({
+            focus: () => {
+              //setTocando('SinopseSerieDrawer')
+            },
+            blur: () => {
+              setTocando("");
+            },
+          })}
+        />
+
+        <DrawerNavigator.Screen
+          name="SinopseSerieCursoDrawer"
+          component={SinopseSerieCurso}
           options={({ navigation }) => ({
             headerShown: false,
             drawerLabel: () => <Text>Sinopse</Text>,

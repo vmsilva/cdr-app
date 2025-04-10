@@ -906,3 +906,27 @@ export const openLocalFile = async (objeto) => {
       console.error("Erro ao abrir o arquivo:", error);
   }
 };
+
+export function convertSeconds(inputSeconds) {
+  // Calcular o número de horas, minutos e segundos
+  const hours = Math.floor(inputSeconds / 3600);
+  const remainingSecondsAfterHours = inputSeconds % 3600;
+  const minutes = Math.floor(remainingSecondsAfterHours / 60);
+  const seconds = remainingSecondsAfterHours % 60;
+  
+  // Construir a string de saída
+  let result = '';
+  if (hours > 0) {
+      result += `${hours} hora${hours > 1 ? 's' : ''}`;
+  }
+  if (minutes > 0) {
+      if (result) result += ' e ';
+      result += `${minutes} minuto${minutes > 1 ? 's' : ''}`;
+  }
+  if (seconds > 0) {
+      if (result) result += ' e ';
+      result += `${seconds} segundo${seconds > 1 ? 's' : ''}`;
+  }
+  
+  return result;
+}

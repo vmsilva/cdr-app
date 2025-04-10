@@ -134,6 +134,16 @@ function UtilProvider({ children }: UtilProps): JSX.Element {
   const buscaHome = async () => {
     try {
 
+      let parametrosBase = {
+        rota: "/base/",
+        parametros: {
+          cod_cliente: EMPRESA.EMPRESA.cod_cliente,
+        },
+        showNotification: false,
+        showLogError: true,
+        showLog: true,
+      };
+
       let parametros = {
         rota: "home/",
         parametros: {
@@ -153,6 +163,8 @@ function UtilProvider({ children }: UtilProps): JSX.Element {
         showLogError: true,
         showLog: true,
       };
+
+      const responseHomeBase = (await postData(parametrosBase)) as any;
       const response = (await postData(parametros)) as any;
       const responsePalestrantes = (await postData(
         parametrosPalestrantes
@@ -165,7 +177,7 @@ function UtilProvider({ children }: UtilProps): JSX.Element {
       }
 
       console.log(parametrosPalestrantes, 'teste parametrooooo')
-
+      setBase(responseHomeBase.data.data);
       setHome(response.data.data);
       setDestaques(response.data.data.destaques);
       console.log(response.data.data, '---->>> categoriassa');
