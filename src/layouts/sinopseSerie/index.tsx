@@ -202,7 +202,7 @@ const SinopseSerie: React.FC<any> = (props) => {
              
             if(itemtemporada.videos != undefined && itemtemporada.videos != null && Object.values(itemtemporada.videos).length > 0 ){
               
-              //if(itemtemporada.nome_apresentador_temporada == item.nome_apresentador){asdfds
+              //if(itemtemporada.nome_apresentador_temporada == item.nome_apresentador){
               if(itemtemporada.palestrantes_temporada[0].nome_palestrante == item.nome_apresentador){
                 console.log(itemtemporada, 'temporada -->>')
                 setTemporadaSelecionada(itemtemporada)

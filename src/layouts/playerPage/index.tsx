@@ -1578,7 +1578,7 @@ const PlayerPage: React.FC<any> = (props) => {
                               width: wp("35"),
                             }}
                           >
-                            {video.titulo_video}asdfasfds
+                            {video.titulo_video}
                           </CustomText>
                         )}
                       </>

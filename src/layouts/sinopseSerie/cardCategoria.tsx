@@ -187,7 +187,7 @@ const CardCategoria: React.FC<any> = ({ item, palestrante, categorias }) => {
               }}
               textType="montserratMedium"
             >
-              {item.sinopse_categoria}asdfadsfasas
+              {item.sinopse_categoria}
             </CustomText>
           </View>
         </View>

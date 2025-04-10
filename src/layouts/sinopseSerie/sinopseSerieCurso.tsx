@@ -548,7 +548,7 @@ const SinopseSerieCurso: React.FC<any> = (props) => {
                           lineHeight: 19,
                         }}
                       >
-                        {categoriaHERDADA.categoria.descricao_categoria}asdfsafdsaa
+                        {categoriaHERDADA.categoria.descricao_categoria}
                       </CustomText>
                     </View>
                   </LinearGradient>
